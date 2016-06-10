@@ -1,4 +1,4 @@
-function [ minimum_distance,area,matrixX,matrixY,steps ] = dtwFeatureExtraction( f1,f2,Tw )
+function [ minimum_distance,area,matrixX,matrixY,steps,path ] = dtwFeatureExtraction( f1,f2,Tw )
 %Calculates dtw and then extracts the following features from
 %2 sequences
 
@@ -11,9 +11,9 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = dtwFeatureExtraction(
     X(:,2)=[];
     Y=path;
     Y(:,1)=[];
-    plot(X,Y);
+    plot(X,Y)
     hold on;
-    plot(X,X,'r');
+    plot(X,X,'r')
     hold off;
 
     %finding area between the 2 curves;
