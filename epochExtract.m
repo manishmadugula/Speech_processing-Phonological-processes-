@@ -1,11 +1,11 @@
-function [zfSig, gci, slope]=epochExtract(wav, fs)
+function [zfSig, gci, slope]=epochExtract(wav, fs,Tw,Ts)
 % function [gci]=epochExtract(wav, fs)
 % Returns the pitch values for every 10 ms interval.
 % zfSig is the zero frequency signal derived from speech signal.
 % gci is the glottal closure instant timing in seconds.
 %	[wav fs]=wavread(wavFile);
 % 	wav=resample(wav,8000,fs); fs=8000;
-	winLength=xcorrWinLen(wav,fs);
+	winLength=xcorrWinLen(wav,fs,Tw,Ts);
     
     winLength
 
@@ -61,14 +61,14 @@ function [f,s]=zerocros(x,m)
 	end
 	s=x(f+1)-x(f);
 
-function [idx]=xcorrWinLen(wav,fs)
+function [idx]=xcorrWinLen(wav,fs,Tw,Ts)
 
 	zfSig=zeroFreqFilter(wav,fs,2);
 	zfSig=zfSig/max(abs(zfSig));
 	wav=zfSig;
 
-	frameSize=30*fs/1000;
-	frameShift=20*fs/1000;
+	frameSize=round(Tw*fs/1000);
+	frameShift=round(Ts*fs/1000);
 
 	en=conv(wav.^2,ones(frameSize,1));
 	en=en(frameSize/2:end-frameSize/2);

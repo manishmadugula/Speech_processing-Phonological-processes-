@@ -5,8 +5,8 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = zfSig_dtwcomparision(
 %matrixX and matrixY has 3 columns the length of the horizontal segment and
 %starting and ending co-ordinates of the segment in other 2 columns
 
-    [zfSig1, gci1, slope1]=epochExtract(y1, Fs1);
-    [zfSig2, gci2, slope2]=epochExtract(y2, Fs2);
+    [zfSig1, gci1, slope1]=epochExtract(y1, Fs1,Tw,Ts);
+    [zfSig2, gci2, slope2]=epochExtract(y2, Fs2,Tw,Ts);
     subplot(3,2,1);
     plot(zfSig1);
     Frame_size=Tw/1000;
