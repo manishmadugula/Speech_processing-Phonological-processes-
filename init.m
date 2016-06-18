@@ -1,10 +1,10 @@
-% [y1,Fs1,bit1]=wavread('total/udupu/correct/udupu_2.wav');
- %[y2,Fs2,bit2]=wavread('total/udupu/incorrect/upudu.wav');
+ [y1,Fs1,bit1]=wavread('total/nadiyitu/correct/nadiyitu.wav');
+ [y2,Fs2,bit2]=wavread('total/nadiyitu/correct/nadiyitu_2.wav');
 %[y2,Fs2,bit2]=wavread('total/sampadakaru/incorrect/sampachakaru.wav');
 %[y1,Fs1]=wavread('1.wav');
-[y2,Fs2]=wavread('2.wav');
+%[y2,Fs2]=wavread('2.wav');
 
-[y1,Fs1]=wavread('ka.wav');
+%[y1,Fs1]=wavread('ka.wav');
 
 Tw = 30;                % analysis frame duration (ms)
 Ts = 15;                % analysis frame shift (ms)

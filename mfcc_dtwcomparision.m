@@ -1,4 +1,4 @@
-function [minimum_distance, area,matrixX,matrixY,steps ] = mfcc_dtwcomparision(y1,y2,Fs1,Fs2,Tw,Ts)
+function [minimum_distance, area,matrixX,matrixY,steps,path ] = mfcc_dtwcomparision(y1,y2,Fs1,Fs2,Tw,Ts)
 %DTW of MFCCs and finds the area and horizontal and vertical segments
 %y1 AND y2 are 2 signals and Fs1 and Fs2 are their sampling frequency,Tw-window length,Ts-window Shift
 %area is the area between y=x and the minimum path curve
@@ -17,7 +17,7 @@ function [minimum_distance, area,matrixX,matrixY,steps ] = mfcc_dtwcomparision(y
     [MFCCs1, FBEs, frames ] = mfcc( y1, Fs1, Tw, Ts, alpha, @hamming, [LF HF], M, C+1, L );
     [MFCCs2, FBEs, frames ] = mfcc( y2, Fs2, Tw, Ts, alpha, @hamming, [LF HF], M, C+1, L );
     
-    [ minimum_distance,area,matrixX,matrixY,steps] = dtwFeatureExtraction( MFCCs1,MFCCs2,Tw );
+    [ minimum_distance,area,matrixX,matrixY,steps,path] = dtwFeatureExtraction( MFCCs1,MFCCs2,Tw );
     
     
     

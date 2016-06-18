@@ -10,6 +10,7 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = gci_dtwcomparision( y
     
     a1=size(y1);
     first_sequence=zeros(a1(1),1);
+    first_sequence(:,:)=-1;
     b1=size(gci1);
     for(i=1:b1(1))
         first_sequence(gci1(i))=1;
@@ -17,12 +18,15 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = gci_dtwcomparision( y
     
         a2=size(y2);
     second_sequence=zeros(a2(1),1);
+    second_sequence(:,:)=-1;
     b2=size(gci2);
     for(i=1:b2(1))
         second_sequence(gci2(i))=1;
     end
     
-    [ minimum_distance,area,matrixX,matrixY,steps ] = pitch_dtwcomparision( first_sequence,second_sequence,Fs1,Fs2,Tw,Ts );
+    [ zc1 ] = stzcr( first_sequence,Fs1,Tw,Ts );
+    [ zc2 ] = stzcr( second_sequence,Fs2,Tw,Ts );
+    [ minimum_distance,area,matrixX,matrixY,steps,path ] = dtwFeatureExtraction( zc1,zc2,Tw );
 
 
 end

@@ -8,9 +8,9 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = zfSig_dtwcomparision(
     [zfSig1, gci1, slope1]=epochExtract(y1, Fs1,Tw,Ts);
     [zfSig2, gci2, slope2]=epochExtract(y2, Fs2,Tw,Ts);
     subplot(3,2,1);
-    plot(zfSig1);
-    Frame_size=Tw/1000;
-    Frame_shift=Ts/1000;                             %so that x axis is time not samples
+    plot(diff(zfSig1));
+    Frame_size=20/1000;
+    Frame_shift=10/1000;                             %so that x axis is time not samples
     %% perform short term energy calculation of zfSig1
     window_length=Frame_size*Fs1;
     window_shift=floor(Frame_shift*Fs1);
@@ -18,7 +18,7 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = zfSig_dtwcomparision(
     energy1=0;
     w = window(@rectwin,window_length);
     jj=1;
-    y=zfSig1;
+    y=smooth(zfSig1);
     for i=1:(floor(length(y)/window_shift)-ceil(window_length/window_shift))        %1 to 
         for j=((i-1)*window_shift+1):(((i-1)*window_shift+1)+window_length-1)
                 y(j)=y(j)*w(jj);
@@ -35,7 +35,7 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = zfSig_dtwcomparision(
     plot(c1);
     
     subplot(3,2,2);
-    plot(zfSig2);
+    plot(diff(zfSig2));
     Frame_size=Tw/1000;
     Frame_shift=Ts/1000;                             %so that x axis is time not samples
     %% perform short term energy calculation of zfSig1
@@ -45,7 +45,7 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = zfSig_dtwcomparision(
     energy2=0;
     w = window(@rectwin,window_length);
     jj=1;
-    y=zfSig2;
+    y=smooth(zfSig2);
     for i=1:(floor(length(y)/window_shift)-ceil(window_length/window_shift))        %1 to 
         for j=((i-1)*window_shift+1):(((i-1)*window_shift+1)+window_length-1)
                 y(j)=y(j)*w(jj);
