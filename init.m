@@ -67,7 +67,7 @@
 
 %        different words
           [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (3).wav');
-          [y2,Fs2,bit2]=wavread('total/sampadakaru/incorrect/sampatakaru_2.wav');
+          [y2,Fs2,bit2]=wavread('total/akarshaka/correct/akashaka.wav');
 
 
 
