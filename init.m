@@ -1,75 +1,77 @@
-%correct with correct
+    %correct with correct
 
-% %    different speaker-1
-%         [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi.wav');
-%         [y2,Fs2,bit2]=wavread('total/shatapadi/correct/shatapadi_2.wav');
+    % %    different speaker-1
+%             [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi.wav');
+%             [y2,Fs2,bit2]=wavread('total/shatapadi/correct/shatapadi_2.wav');
 
-    %different speaker-2
-%          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi.wav');
-%          [y2,Fs2,bit2]=wavread('total/shatapadi/correct/shatapadi (2).wav');
+        %different speaker-2
+%              [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi.wav');
+%              [y2,Fs2,bit2]=wavread('total/shatapadi/correct/shatapadi (2).wav');
 
-    %different speaker-3
-%           [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (2).wav');
-%           [y2,Fs2,bit2]=wavread('total/shatapadi/correct/shatapadi_1.wav');
+        %different speaker-3
+%               [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (2).wav');
+%               [y2,Fs2,bit2]=wavread('total/shatapadi/correct/shatapadi_1.wav');
 
-    %same speaker
-%            [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (3).wav');
-%            [y2,Fs2,bit2]=wavread('total/shatapadi/correct/shatapadi_1.wav');
+        %same speaker
+%                [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (3).wav');
+%                [y2,Fs2,bit2]=wavread('total/shatapadi/correct/shatapadi_1.wav');
 
-%incorrect with incorrect
+%     incorrect with incorrect
+
+        %same word-1
+%         [y1,Fs1,bit1]=wavread('total/shatapadi/incorrect/shadapadi.wav');
+%         [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shadapadi_3.wav');
+
+        %same word-2(same speaker)
+    %              [y1,Fs1,bit1]=wavread('total/shatapadi/incorrect/shatapati.wav');
+    %              [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shatapati_3.wav');
+
+        %different word (same speaker)
+    %              [y1,Fs1,bit1]=wavread('total/shatapadi/incorrect/shadapadi.wav');
+    %              [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shatapati.wav');
+
+        %different word (same speaker)
+    %              [y1,Fs1,bit1]=wavread('total/shatapadi/incorrect/shadapadi_3.wav');
+    %              [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shatapati.wav');
+    % 
+
+    %correct with incorrect
+
+    %first mistake
+
+        %(same speaker)
+    %          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi.wav');
+    %          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shadapadi.wav');
+
+        %(different speaker)
+    %          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi.wav');
+    %          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shadapadi_3.wav');
+
+        %(same speaker)
+    %          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (3).wav');
+    %          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shadapadi_3.wav');
+
+         %(different speaker)
+    %          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (2).wav');
+    %          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shadapadi_3.wav');
+
+    %second mistake
+
+         %(same speaker)
+    %          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (3).wav');
+    %          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shatapati_3.wav');
+
+          %(different speaker)
+    %          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (3).wav');
+    %          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shatapati.wav');
+
+    %        different words
+    str1='total\shatapadi\correct\shatapadi.wav'
+    str2='total\avignawagi\correct\avignawagi.wav'
+              [y1,Fs1,bit1]=wavread(str1);
+              [y2,Fs2,bit2]=wavread(str2);
     
-    %same word-1
-%              [y1,Fs1,bit1]=wavread('total/shatapadi/incorrect/shadapadi.wav');
-%              [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shadapadi_3.wav');
-
-    %same word-2(same speaker)
-%              [y1,Fs1,bit1]=wavread('total/shatapadi/incorrect/shatapati.wav');
-%              [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shatapati_3.wav');
-
-    %different word (same speaker)
-%              [y1,Fs1,bit1]=wavread('total/shatapadi/incorrect/shadapadi.wav');
-%              [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shatapati.wav');
-
-    %different word (same speaker)
-%              [y1,Fs1,bit1]=wavread('total/shatapadi/incorrect/shadapadi_3.wav');
-%              [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shatapati.wav');
-
-
-%correct with incorrect
-     
-%first mistake
-     
-    %(same speaker)
-%          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi.wav');
-%          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shadapadi.wav');
-
-    %(different speaker)
-%          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi.wav');
-%          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shadapadi_3.wav');
-
-    %(same speaker)
-%          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (3).wav');
-%          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shadapadi_3.wav');
-
-     %(different speaker)
-%          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (2).wav');
-%          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shadapadi_3.wav');
-%     
-%second mistake
-
-     %(same speaker)
-%          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (3).wav');
-%          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shatapati_3.wav');
-
-      %(different speaker)
-%          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (3).wav');
-%          [y2,Fs2,bit2]=wavread('total/shatapadi/incorrect/shatapati.wav');
-
-%        different words
-          [y1,Fs1,bit1]=wavread('total/shatapadi/correct/shatapadi (3).wav');
-          [y2,Fs2,bit2]=wavread('total/akarshaka/correct/akashaka.wav');
-
-
+    
 
 
 
@@ -98,10 +100,10 @@ player1=audioplayer(y1,Fs1);
 player2=audioplayer(y2,Fs2);
 
 %Enable filtering
-% y1=wcmvn(y1.',661,true);
-% y2=wcmvn(y2.',661,true);
-% y1=y1.'
-% y2=y2.'
+y1=wcmvn(y1.',661,true);
+y2=wcmvn(y2.',661,true);
+y1=y1.';
+y2=y2.';
 
 
 % Max value 100: 
