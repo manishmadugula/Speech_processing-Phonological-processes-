@@ -12,7 +12,7 @@ pitch_name1=strsplit(strjoin(sound_name1),'.');
 pitch_name1=strjoin(pitch_name1(1));
 pitch_name1=strcat(pitch_name1,'_pitch.csv ');
 
-command_cell=strcat('praatcon.exe',{' '},'pitchextract.praat',{' '},sound_name1,{' '} ,pitch_name1,{' '},str_dir1,'\')
+command_cell=strcat('praatcon.exe',{' '},'pitchextract.praat',{' '},sound_name1,{' '} ,pitch_name1,{' '},str_dir1,'\');
 
 command_string=strjoin(command_cell);
 [status]=system(command_string);

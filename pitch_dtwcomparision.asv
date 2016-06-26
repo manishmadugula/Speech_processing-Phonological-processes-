@@ -45,9 +45,9 @@ plot(matrix_pitch2)
 figure
 matrix_pitch1=matrix_pitch1(:,2);
 matrix_pitch2=matrix_pitch2(:,2);
-[ matrix_pitch1 ] = mean_normalization( matrix_pitch1,matrix_pitch1 )
-[ matrix_pitch2 ] = mean_normalization( matrix_pitch2,matrix_pitch2 )
-    [ minimum_distance,area,matrixX,matrixY,steps ] = dtwFeatureExtraction( matrix_pitch1.',matrix_pitch2.',Tw );
+[ matrix_pitch1n ] = mean_normalization( matrix_pitch1,matrix_pitch1 )
+[ matrix_pitch2n ] = mean_normalization( matrix_pitch2,matrix_pitch2 )
+    [ minimum_distance,area,matrixX,matrixY,steps ] = dtwFeatureExtraction( matrix_pitch1n.',matrix_pitch2n.',Tw );
 
 
 end

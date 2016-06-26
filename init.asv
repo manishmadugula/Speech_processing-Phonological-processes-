@@ -85,11 +85,9 @@
 %               [y1,Fs1,bit1]=wavread(str1);
 %               [y2,Fs2,bit2]=wavread(str2);
     
-%     
+    
 str1='total\nadiyitu\correct\nadiyitu.wav'
-str2='total\nadiyitu\incorrect\nadiyidu.wav'
-              [y1,Fs1,bit1]=wavread(str1);
-              [y2,Fs2,bit2]=wavread(str2);
+str2='total\nadiyitu\correct\nadiyitu.wav'
 
 
 
