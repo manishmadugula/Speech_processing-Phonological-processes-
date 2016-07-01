@@ -16,7 +16,7 @@ function [minimum_distance, area,matrixX,matrixY,steps,path ] = mfcc_dtwcomparis
     %find mfcc of 2 signals
     [MFCCs1, FBEs, frames ] = mfcc( y1, Fs1, Tw, Ts, alpha, @hamming, [LF HF], M, C+1, L );
     [MFCCs2, FBEs, frames ] = mfcc( y2, Fs2, Tw, Ts, alpha, @hamming, [LF HF], M, C+1, L );
-    
+    [MFCCs1d,MFCCs2d]=duration_normalization_2(MFCCs1,MFCCs2);
     [ minimum_distance,area,matrixX,matrixY,steps,path] = dtwFeatureExtraction( MFCCs1,MFCCs2,Tw );
     
     

@@ -1,4 +1,5 @@
-function [ minimum_distance,area,matrixX,matrixY,steps ] = pitch_dtwcomparision( str1,str2,Tw )
+function [minimum_distance, area,matrixX,matrixY,steps  ] = pitch_dtwcomparision( str1,str2,Tw )
+%%flag==1 if normalized flag==0 if normal else flag==anythingelse binary
 %DTW of Pitch and finds the area and horizontal and vertical segments
 %y1 AND y2 are 2 signals and Fs1 and Fs2 are their sampling frequency,Tw-window length,Ts-window Shift
 %area is the area between y=x and the minimum path curve
@@ -36,18 +37,34 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = pitch_dtwcomparision(
 % %         [ F0 ] = pitch_autocorr( segment,Fs2 );
 % %         matrix_pitch2=[matrix_pitch2;F0];
 % %     end
-figure
+% figure
+close all;
 [ matrix_pitch1 ] = pitchExtractPraat( str1);
-plot(matrix_pitch1);
-figure
+% plot(matrix_pitch1);
+% figure
 [ matrix_pitch2 ] = pitchExtractPraat( str2);
-plot(matrix_pitch2)
-figure
+% plot(matrix_pitch2)
+
 matrix_pitch1=matrix_pitch1(:,2);
 matrix_pitch2=matrix_pitch2(:,2);
-[ matrix_pitch1 ] = mean_normalization( matrix_pitch1,matrix_pitch1 )
-[ matrix_pitch2 ] = mean_normalization( matrix_pitch2,matrix_pitch2 )
-    [ minimum_distance,area,matrixX,matrixY,steps ] = dtwFeatureExtraction( matrix_pitch1.',matrix_pitch2.',Tw );
+% [ matrix_pitch1n ] = mean_normalization( matrix_pitch1,matrix_pitch1 );
+% [ matrix_pitch2n ] = mean_normalization( matrix_pitch2,matrix_pitch2 );
+
+[matrix_pitch1d,matrix_pitch2d]=duration_normalization(matrix_pitch1,matrix_pitch2);
+
+[matrix_pitch1s]=segment_normalization(matrix_pitch1d);
+[matrix_pitch2s]=segment_normalization(matrix_pitch2d);
+
+plot(matrix_pitch1s);
+figure
+plot(matrix_pitch2s);
+figure
+% [ minimum_distance, area,matrixX,matrixY,steps ] = dtwFeatureExtraction( matrix_pitch1.',matrix_pitch2.',Tw );
+[ minimum_distance, area,matrixX,matrixY,steps ] = dtwFeatureExtraction( matrix_pitch1s,matrix_pitch2s,Tw );     
+%     [ minimum_distance2,area2] = dtwFeatureExtraction( matrix_pitch1n.',matrix_pitch2n.',Tw )
+%     [  minimum_distance3,area3] = pitchtoBinary( str1,str2,Tw )
+    
+    
 
 
 end
