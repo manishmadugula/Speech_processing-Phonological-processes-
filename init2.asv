@@ -133,8 +133,7 @@ clc
 % str1='total\phaladayaka\correct\phaladayaka_2.wav';%gd
 % str2='total\phaladayaka\incorrect\palakayaka.wav';
 
-str1='total\pitrupakya\correct\pitruwakya.wav';
-str2='total\pitrupakya\incorrect\pitrupakya.wav';
+str1='total\'
 
 
 

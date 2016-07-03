@@ -1,8 +1,11 @@
-function [ matrix ] = segment_normalization( matrix_pitch )
+function [ matrix ] = segment_normalization( matrix_pitch,mn )
 %divide the pitch profile into segments and if segment is not zero segment 
 %mean normalize it and add mean to it.
-
+if matrix_pitch(1)~=0
 flag=0;
+else
+    flag=1;
+end
 nSeg=0;
 cel=cell(1);
 x=1;
@@ -30,13 +33,13 @@ end
 
 for i=1:x
 if(cel{i}(1)~=0)
-    arr=[]
+    arr=[];
     for j=1:length(cel{i})
     arr=[arr cel{i}(j)]
     end
-mn=mean(arr);
+ mn1=mean(arr);
 st=std(arr);
-cel{i}=(cel{i}-mn)/st;
+cel{i}=(cel{i}-mn1)/st;
 cel{i}=cel{i}+mn;
 end
 end

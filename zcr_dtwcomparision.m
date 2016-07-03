@@ -19,9 +19,17 @@ winamp = [0.5,1]*(1/winlen);
 
 % find the zero-crossing rate
 zc1 = zerocross(y1,wintype,winamp(1),winlen);
+x=floor(length(zc1)/100)
+zc1b=decimate(zc1,x);
+for i=1:length(zc1b)
+if zc1b(i)>.1
+zc1b(i)=zc1b(i)*5;
+else
+zc1b(i)=zc1b(i)/50;
+end
 
-
-% time index for the ST-ZCR and STE after delay compensation
+end
+%time index for the ST-ZCR and STE after delay compensation
 out = (winlen-1)/2:(N+winlen-1)-(winlen-1)/2;
 t = (out-(winlen-1)/2)*(1/Fs1);
 
@@ -47,9 +55,18 @@ winamp = [0.5,1]*(1/winlen);
 
 % find the zero-crossing rate
 zc2 = zerocross(y2,wintype,winamp(1),winlen);
+x=floor(length(zc2)/100);
+zc2b=decimate(zc2,x);
+for i=1:length(zc2b)
+if zc2b(i)>.1
+zc2b(i)=zc2b(i)*5;
+else
+zc2b(i)=zc2b(i)/50;
+end
 
+end
 
-% time index for the ST-ZCR and STE after delay compensation
+%time index for the ST-ZCR and STE after delay compensation
 out = (winlen-1)/2:(N+winlen-1)-(winlen-1)/2;
 t = (out-(winlen-1)/2)*(1/Fs2);
 
@@ -69,8 +86,8 @@ legend('signal','STZCR');
 % [ zc2 ] = stzcr( y2,Fs2,Tw,Ts );
 % figure
 % plot(zc2)
-% figure
-% [ minimum_distance,area,matrixX,matrixY,steps ] = dtwFeatureExtraction( zc1,zc2,Tw );
+figure
+[ minimum_distance,area,matrixX,matrixY,steps ] = dtwFeatureExtraction( zc1b,zc2b,Tw );
 
     
 
