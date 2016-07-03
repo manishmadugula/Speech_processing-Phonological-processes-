@@ -69,14 +69,14 @@ else
     matrix_pitch2s(i)=0;
 end
 end
-% plot(matrix_pitch1d);
-% figure
-% plot(matrix_pitch2d);
-% figure
+plot(matrix_pitch1d);
+figure
+plot(matrix_pitch2d);
+figure
 % matrix_pitch1s
 % matrix_pitch2s
 % [ minimum_distance, area,matrixX,matrixY,steps ] = dtwFeatureExtraction( matrix_pitch1.',matrix_pitch2.',Tw );
-[ minimum_distance, area,matrixX,matrixY,steps ] = dtwFeatureExtraction( matrix_pitch1d.',matrix_pitch2d.',Tw );     
+[ minimum_distance, area,matrixX,matrixY,steps ] = dtwFeatureExtraction( matrix_pitch1s,matrix_pitch2s,Tw );     
 %     [ minimum_distance2,area2] = dtwFeatureExtraction( matrix_pitch1n.',matrix_pitch2n.',Tw )
 %     [  minimum_distance3,area3] = pitchtoBinary( str1,str2,Tw )
     

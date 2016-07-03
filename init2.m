@@ -133,12 +133,56 @@ clc
 % str1='total\phaladayaka\correct\phaladayaka_2.wav';%gd
 % str2='total\phaladayaka\incorrect\palakayaka.wav';
 
-str1='total\pitrupakya\correct\pitruwakya.wav';
-str2='total\pitrupakya\incorrect\pitrupakya.wav';
+% str1='total\pitrupakya\correct\pitruwakya.wav';%gd
+% str2='total\pitrupakya\incorrect\pitrupakya.wav';
 
+% str1='total\puje\correct\puje_2.wav';%gd
+% str2='total\puje\incorrect\puche.wav';
 
+% str1='total\ruchikara\correct\ruchikara.wav';%gd
+% str2='total\ruchikara\incorrect\ruchigara.wav';
 
+% str1='total\saddu\correct\saddu.wav';%gd but great with segment normalization
+% str2='total\saddu\incorrect\sattu_denoised.wav';
 
+% str1='total\sahiti\correct\sahiti_2.wav';%gd
+% str2='total\sahiti\incorrect\sahindri.wav';
+
+% str1='total\sampadakaru\correct\dakaru.wav';%gd
+% str2='total\sampadakaru\incorrect\takaru.wav';
+
+% str1='total\sangrahane\correct\sangrahane_1.wav';%gd very good with seg-norm
+% str2='total\sangrahane\incorrect\sangrahanake_2.wav';
+
+% str1='total\sarakarakke\correct\sarakarakke.wav'%gd
+% str2='total\sarakarakke\incorrect\sararakke.wav'
+
+% str1='total\shatapadi\correct\shatapadi.wav';%gd
+% str2='total\shatapadi\incorrect\shadapadi.wav';
+
+% str1='total\shatapadi\correct\shatapadi_2.wav';%gd but better with seg-norm
+% str2='total\shatapadi\incorrect\shatapati_2.wav';
+
+% str1='total\shitilagonda\correct\shithilgonda.wav'%gd
+% str2='total\shitilagonda\incorrect\shidilagonda_2.wav'
+
+% str1='total\sidipu\correct\sidibu.wav'%gd
+% str2='total\sidipu\incorrect\sidipu.wav'
+
+% str1='total\somarita\incorrect\somarida.wav';%bad
+% str2='total\somarita\correct\somarita.wav'
+
+% str1='total\tuntata\correct\tuntata.wav';%gd
+% str2='total\tuntata\incorrect\tuntada_denoised.wav'
+
+% str1='total\vishama\correct\vishama.wav';%bad but good with seg-norm
+% str2='total\vishama\incorrect\vishake.wav';
+ 
+% str1='total\wadeya\correct\wadeya.wav';%gd
+% str2='total\wadeya\incorrect\wadika_2.wav';
+
+% str1='total\wadike\correct\wadike.wav';%bad
+% str2='total\wadike\incorrect\wadige_2.wav';
 
 [y1,Fs1,bit1]=wavread(str1);
 [y2,Fs2,bit2]=wavread(str2);
