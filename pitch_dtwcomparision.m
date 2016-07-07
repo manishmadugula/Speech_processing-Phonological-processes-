@@ -1,4 +1,4 @@
-function [minimum_distance, area,matrixX,matrixY,steps  ] = pitch_dtwcomparision( str1,str2,Tw )
+function [region1,region2 ] = pitch_dtwcomparision( str1,str2,Tw )
 %%flag==1 if normalized flag==0 if normal else flag==anythingelse binary
 %DTW of Pitch and finds the area and horizontal and vertical segments
 %y1 AND y2 are 2 signals and Fs1 and Fs2 are their sampling frequency,Tw-window length,Ts-window Shift
@@ -55,6 +55,7 @@ mn=mean(matrix_pitch1);
 
 [matrixpitch1s]=segment_normalization(matrix_pitch1d,mn);
 [matrixpitch2s]=segment_normalization(matrix_pitch2d,mn);
+%to get rid of a bug
 for i=1:length(matrixpitch1s)
 if ~isnan(matrixpitch1s(i))
     matrix_pitch1s(i)=matrixpitch1s(i);
@@ -69,6 +70,7 @@ else
     matrix_pitch2s(i)=0;
 end
 end
+
 plot(matrix_pitch1d);
 figure
 plot(matrix_pitch2d);
@@ -76,10 +78,10 @@ figure
 % matrix_pitch1s
 % matrix_pitch2s
 % [ minimum_distance, area,matrixX,matrixY,steps ] = dtwFeatureExtraction( matrix_pitch1.',matrix_pitch2.',Tw );
-[ minimum_distance, area,matrixX,matrixY,steps ] = dtwFeatureExtraction( matrix_pitch1s,matrix_pitch2s,Tw );     
+[ minimum_distance, area,matrixX,matrixY,steps,path ] = dtwFeatureExtraction( matrix_pitch1s,matrix_pitch2s,Tw );     
 %     [ minimum_distance2,area2] = dtwFeatureExtraction( matrix_pitch1n.',matrix_pitch2n.',Tw )
 %     [  minimum_distance3,area3] = pitchtoBinary( str1,str2,Tw )
-    
+    [ region1,region2  ] = dynamic_area( path );
     
 
 

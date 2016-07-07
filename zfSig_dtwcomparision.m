@@ -7,7 +7,7 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = zfSig_dtwcomparision(
 
     [zfSig1, gci1, slope1]=epochExtract(y1, Fs1,Tw,Ts);
     [zfSig2, gci2, slope2]=epochExtract(y2, Fs2,Tw,Ts);
-    subplot(3,2,1);
+    subplot(2,2,1);
     plot((zfSig1));
     Frame_size=20/1000;
     Frame_shift=10/1000;                             %so that x axis is time not samples
@@ -31,10 +31,10 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = zfSig_dtwcomparision(
         jj=1;
     end
     c1=energy1;
-    subplot(3,2,3);
+    subplot(2,2,3);
     plot(c1);
     
-    subplot(3,2,2);
+    subplot(2,2,2);
     plot((zfSig2));
     Frame_size=Tw/1000;
     Frame_shift=Ts/1000;                             %so that x axis is time not samples
@@ -58,10 +58,11 @@ function [ minimum_distance,area,matrixX,matrixY,steps ] = zfSig_dtwcomparision(
         jj=1;
     end
     c2=energy2;
-    subplot(3,2,4);
+    subplot(2,2,4);
     plot(c2);
-    subplot(3,2,[5,6]);
-    [ minimum_distance,area,matrixX,matrixY,steps ] = dtwFeatureExtraction( c1,c2,Tw );
+    figure
+    [c1,c2]=duration_normalization(c1.',c2.');
+    [ minimum_distance,area,matrixX,matrixY,steps ] = dtwFeatureExtraction( c1.',c2.',Tw );
 
     
 end

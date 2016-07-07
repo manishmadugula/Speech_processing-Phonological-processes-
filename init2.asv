@@ -39,8 +39,8 @@ clc
 % str1='total\balipetadamele\correct\balipeethada_(2).wav';%gd
 % str2='total\balipetadamele\incorrect\balibeethada_2.wav';
 
-str1='total\bhachanikeyinda\correct\bhachanikeyinda.wav';%gd
-str2='total\bhachanikeyinda\incorrect\bhachanigeyinda.wav'
+% str1='total\bhachanikeyinda\correct\bhachanikeyinda.wav';%gd
+% str2='total\bhachanikeyinda\incorrect\bhachanigeyinda.wav'
 
 % str1='total\daguttade\correct\aguttade_2.wav';%not good 
 % str2='total\daguttade\incorrect\atuttade.wav';
@@ -187,12 +187,12 @@ str2='total\bhachanikeyinda\incorrect\bhachanigeyinda.wav'
 % str1='total\wadike\correct\wadike.wav';%bad
 % str2='total\wadike\incorrect\wadige_2.wav';
 
-% [y1,Fs1,bit1]=wavread(str1);
-% [y2,Fs2,bit2]=wavread(str2);
+[y1,Fs1,bit1]=wavread(str1);
+[y2,Fs2,bit2]=wavread(str2);
 % plot(y1);
 % figure
 % plot(y2);
 Tw = 30;                % analysis frame duration (ms)
 Ts = 15;                % analysis frame shift (ms)
-% player1=audioplayer(y1,Fs1);
-% player2=audioplayer(y2,Fs2);
+player1=audioplayer(y1,Fs1);
+player2=audioplayer(y2,Fs2);
