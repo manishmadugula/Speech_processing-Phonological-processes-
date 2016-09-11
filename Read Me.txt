@@ -1,0 +1,28 @@
+All the assimilation's directory is attached to init2.m just open it and comment out the sound you would like to analyse.
+
+By using following commands you can find minimum path,area etc feature for MFCCs,Pitch,Formants,GCI,Jitter,Shimmer,Zero frequency signal,lpresidual,zcr
+
+mfcc_dtwcomparision.m
+formants_dtwcomparision.m
+pitch_dtwcomparision.m
+shimmer_dtwcomparision.m
+jitter_dtwcomparision.m
+zcr_dtwcomparision.m
+zfSig_dtwcomparision.m
+gci_dtwcomparision.m
+lpresidual_dtwcomparision.m
+
+(pitch uses praat which is called from command line using praatcon.exe so make sure you have praat in your environmental variable)
+
+normalization tried:
+mean_normalization.m
+duration-normalization.m
+cdf_normalization.m
+segment_normalization.m
+
+DTW features are all extracted in dtwFeatureExtraction.m
+
+dynamic_area.m is used to calculate area between diagonal and dtw path and return the region for which area value is maximum
+
+DATA.ods has data and results related to identification of region of assimilation.
+mfccs and formants.ods have data related to similarity of words.
